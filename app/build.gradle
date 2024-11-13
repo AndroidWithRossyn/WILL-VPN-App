@@ -1,0 +1,112 @@
+plugins {
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+    // Other plugins here if pre-existing
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.willdev.openvpn'
+
+    signingConfigs {
+
+    }
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId 'com.willdev.openvpn'
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 10
+        versionName "10.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    packagingOptions {
+        pickFirst '**/*.so'
+
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+    buildTypes {
+
+    }
+    dataBinding{
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation project(path: ':LuckyWheel')
+
+    implementation 'com.unity3d.ads:unity-ads:4.9.0'
+    implementation 'androidx.annotation:annotation:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+
+    implementation 'com.google.android.gms:play-services-ads:21.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.firebase:firebase-core:21.1.1'
+    implementation 'com.google.firebase:firebase-messaging:23.2.1'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.8'
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    def lottieVersion = '3.3.1'
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation 'com.anjlab.android.iab.v3:library:1.0.44'
+    implementation 'com.chaos.view:pinview:1.4.2'
+    implementation 'com.facebook.android:audience-network-sdk:6.12.0'
+    implementation 'com.facebook.android:facebook-login:5.15.3'
+    implementation 'com.github.bmarrdev:android-DecoView-charting:v1.2'
+    implementation 'com.github.duanhong169:colorpicker:1.1.6'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation 'com.karumi:dexter:6.2.1'
+    implementation 'com.loopj.android:android-async-http:1.4.11'
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'io.github.dreierf:material-intro-screen:0.0.6'
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+    implementation 'io.github.lizhangqu:coreprogress:1.0.2'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'org.jetbrains:annotations:16.0.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.20'
+    implementation 'com.victor:lib:1.0.4'
+    testImplementation 'junit:junit:4.13.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test:runner:1.6.0-alpha04'
+    implementation("com.android.billingclient:billing:7.0.0")
+    implementation 'com.google.ads.mediation:facebook:6.12.0.0'
+    implementation 'com.google.android.ads:mediation-test-suite:3.0.0'
+    implementation 'com.startapp:inapp-sdk:4.10.1'
+    implementation 'com.applovin:applovin-sdk:11.11.3'
+    implementation "com.appodeal.ads:sdk:3.3.2.0"
+    implementation "com.bigossp:max-mediation:4.8.2.0"
+    implementation 'androidx.work:work-runtime:2.7.1'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.github.gemeauxph:MaterialLoadingIndicator:v1.0.5'
+    implementation 'com.github.oneconnectapi:OneConnectLib:v1.1.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+    implementation 'com.stripe:stripe-android:20.21.1'
+    implementation 'com.github.kittinunf.fuel:fuel:2.3.1'
+}
+
+apply plugin: 'com.google.gms.google-services'

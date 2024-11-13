@@ -1,0 +1,6 @@
+include ':IRBottomNavigationLibb'
+include ':LuckyWheel'
+include ':app'
+project(':IRBottomNavigationLibb').projectDir = new File(rootDir, 'IRBottomNavigationLib/')
+rootProject.name='VPN APP'
+
